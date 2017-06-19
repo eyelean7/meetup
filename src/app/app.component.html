@@ -1,3 +1,15 @@
-<div>
+<nav>
+  <div class="nav-wrapper">
+    <a routerLink="" class="brand-logo left">Home</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li><a routerLink="sign-up" class="brand-logo right">Sign up for a meetup</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1><em style="text-align: center">{{title}}</em></h1>
+  </div>
   <router-outlet></router-outlet>
 </div>
