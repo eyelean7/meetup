@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.nav-wrapper {
+  background-color:#15A5BD;
+}
+body {
+  background-color: #EAF2F2;
+}

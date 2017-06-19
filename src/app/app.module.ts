@@ -10,6 +10,8 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MeetupDetailsComponent } from './meetup-details/meetup-details.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -24,6 +26,7 @@ export const firebaseConfig = {
     NewMeetupComponent,
     SignUpComponent,
     MeetupDetailsComponent
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
