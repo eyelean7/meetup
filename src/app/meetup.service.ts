@@ -24,7 +24,7 @@ export class MeetupService {
   }
 
   updateMeetup(localUpdatedMeetup) {
-    var meetupEntryInFirebase = this.getMeetupById(localUpdatedMeetup.$key);
+    const meetupEntryInFirebase = this.getMeetupById(localUpdatedMeetup.$key);
     meetupEntryInFirebase.update({title: localUpdatedMeetup.title,
                                   description: localUpdatedMeetup.description,
                                   time: localUpdatedMeetup.time,
@@ -33,8 +33,13 @@ export class MeetupService {
   }
 
   deleteMeetup(localMeetupToDelete) {
-    var meetupEntryInFirebase = this.getMeetupById(localMeetupToDelete.$key);
+    const meetupEntryInFirebase = this.getMeetupById(localMeetupToDelete.$key);
     meetupEntryInFirebase.remove();
+  }
+
+  getKey(localMeetupToUpdate) {
+    const key = localMeetupToUpdate.$key;
+    return key;
   }
 
 }

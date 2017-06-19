@@ -16,8 +16,7 @@ export class NewMeetupComponent implements OnInit {
   }
 
   submitForm(title: string, description: string, time: string, place: string) {
-    var users: string[] = [];
-    var newMeetup = new Meetup (title, description, time, place, users);
+    const newMeetup = new Meetup (title, description, time, place);
     this.meetupService.addMeetup(newMeetup);
   }
 

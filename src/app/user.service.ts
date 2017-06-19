@@ -24,7 +24,7 @@ export class UserService {
   }
 
   updateUser(localUpdatedUser) {
-    var meetupEntryInFirebase = this.getUserById(localUpdatedUser.$key);
+    let meetupEntryInFirebase = this.getUserById(localUpdatedUser.$key);
     meetupEntryInFirebase.update({username: localUpdatedUser.username,
                                   password: localUpdatedUser.password,
                                   zipCode: localUpdatedUser.zipCode,
@@ -33,8 +33,13 @@ export class UserService {
   }
 
   deleteUser(localUserToDelete) {
-    var meetupEntryInFirebase = this.getUserById(localUserToDelete.$key);
+    let meetupEntryInFirebase = this.getUserById(localUserToDelete.$key);
     meetupEntryInFirebase.remove();
+  }
+
+  getKey(localUserToUpdate) {
+    let key = localUserToUpdate.$key;
+    return key;
   }
 
 }
