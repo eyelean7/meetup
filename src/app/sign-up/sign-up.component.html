@@ -1,0 +1,16 @@
+<h3>Add a new User</h3>
+<div id="user-new" class="card-panel">
+  <div>
+    <label>User Name:</label>
+    <input #newUserName>
+  </div>
+  <div>
+    <label>Password:</label>
+    <input #newPassword>
+  </div>
+  <div>
+    <label>ZipCode:</label>
+    <input #newZipCode>
+  </div>
+  <button class="btn waves-effect waves light" (click)="submitForm(newUserName.value, newPassword.value, newZipCode.value); newUserName.value=''; newPassword.value=''; newZipCode.value='';">Add</button>
+</div>

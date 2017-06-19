@@ -1,3 +1,20 @@
-<p>
-  new-meetup works!
-</p>
+<h3>Add a new Meetup</h3>
+<div id="meetup-new" class="card-panel">
+  <div>
+    <label>Title:</label>
+    <input #newTitle>
+  </div>
+  <div>
+    <label>Description:</label>
+    <input #newDescription>
+  </div>
+  <div>
+    <label>Time:</label>
+    <input #newTime>
+  </div>
+  <div>
+    <label>Place:</label>
+    <input #newPlace>
+  </div>
+  <button class="btn waves-effect waves light" (click)="submitForm(newTitle.value, newDescription.value, newTime.value, newPlace.value); newTitle.value=''; newDescription.value=''; newTime.value=''; newPlace.value='';">Add</button>
+</div>
