@@ -26,6 +26,10 @@ const appRoutes: Routes = [
   {
     path: 'meetups',
     component: AllMeetupsComponent
+  },
+  {
+    path: 'meetup/new',
+    component: NewMeetupComponent
   }
 ];
 

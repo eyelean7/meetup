@@ -6,6 +6,7 @@
       <li class="btn btn-default" (click)="loginGoogle()">Login with Google</li>
       <li *ngIf="authService.loggedIn" class="btn btn-default" (click)="logout()">Log Out</li>
       <li><a routerLink="meetups">All Meetups</a></li>
+      <li><a routerLink="meetup/new">Add a new Meetup</a></li>
     </ul>
   </div>
 </nav>

@@ -8,9 +8,11 @@ import { AuthService } from './providers/auth.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  appUser: string;
   constructor(public authService: AuthService, private router: Router) { }
   loginGoogle(){
-    this.authService.loginWithGoogle()
+    this.authService.loginWithGoogle();
+
     // if (this.authService.userDisplayName != null){
     // this.router.navigate(['home']);
   }
