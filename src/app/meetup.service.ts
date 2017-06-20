@@ -42,4 +42,16 @@ export class MeetupService {
     return key;
   }
 
+  getMeetupsForUser(userKey, meetupArray) {
+    console.log(userKey);
+    console.log(meetupArray);
+    var meetups = [];
+    for (var meetup of meetupArray) {
+      if (meetup.usersPerMeetup.includes(userKey)) {
+        meetups.push(meetup);
+      }
+    }
+    return meetups;
+  }
+
 }

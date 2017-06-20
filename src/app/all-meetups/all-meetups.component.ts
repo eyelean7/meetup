@@ -20,4 +20,7 @@ export class AllMeetupsComponent implements OnInit {
     this.meetups = this.meetupService.getMeetups();
   }
 
+  goToDetailsPage(clickedMeetup) {
+    this.router.navigate(['meetups', clickedMeetup.$key]);
+  }
 }

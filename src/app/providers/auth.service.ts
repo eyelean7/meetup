@@ -24,14 +24,15 @@ export class AuthService {
       this.userDisplayName = result.user.displayName;
       this.userEmail = result.user.email;
       this.uid = result.user.uid;
-      this.makeUser();
       this.loggedIn = true;
-      console.log(this.uid);
+      this.makeUser();
+      console.log(this.userDisplayName);
     })
   }
   logout(){
-    this.afAuth.auth.signOut();
     this.loggedIn = false;
+    this.afAuth.auth.signOut();
+
   }
 
 
