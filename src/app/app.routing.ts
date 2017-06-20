@@ -7,19 +7,25 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { MeetupDetailsComponent } from './meetup-details/meetup-details.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { SearchComponent } from './search/search.component';
+import { AllMeetupsComponent } from './all-meetups/all-meetups.component';
 
 const appRoutes: Routes = [
   {
-    path: 'home',
-    component: HomePageComponent
-  },
-  {
-    path: 'sign-up',
+    path: '',
     component: LoginPageComponent
   },
   {
     path: 'meetups/:id',
     component: MeetupDetailsComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
+  },
+  {
+    path: 'meetups',
+    component: AllMeetupsComponent
   }
 ];
 

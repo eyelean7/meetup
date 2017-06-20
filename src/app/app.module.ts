@@ -15,6 +15,8 @@ import { AuthService } from './providers/auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { SearchComponent } from './search/search.component';
+import { AllMeetupsComponent } from './all-meetups/all-meetups.component';
 
 
 
@@ -33,7 +35,9 @@ export const firebaseConfig = {
     MeetupDetailsComponent,
     WelcomeComponent,
     LoginPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    SearchComponent,
+    AllMeetupsComponent
   ],
   imports: [
     BrowserModule,

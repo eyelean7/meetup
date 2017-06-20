@@ -1,8 +1,11 @@
 <nav>
   <div class="nav-wrapper">
-    <a routerLink="" class="brand-logo left">Home</a>
+    <a routerLink="" class="brand-logo center">Home</a>
     <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li><a routerLink="sign-up" class="brand-logo right">Sign up for a meetup</a></li>
+      <li><a routerLink="search" class="brand-logo right">Search For Meetups</a></li>
+      <li class="btn btn-default" (click)="loginGoogle()">Login with Google</li>
+      <li *ngIf="authService.loggedIn" class="btn btn-default" (click)="logout()">Log Out</li>
+      <li><a routerLink="meetups">All Meetups</a></li>
     </ul>
   </div>
 </nav>
