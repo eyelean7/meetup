@@ -18,6 +18,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { SearchComponent } from './search/search.component';
 import { AllMeetupsComponent } from './all-meetups/all-meetups.component';
 
+import { AgmCoreModule } from '@agm/core';
+
 
 
 export const firebaseConfig = {
@@ -45,7 +47,10 @@ export const firebaseConfig = {
     HttpModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AgmCoreModule.forRoot({
+     apiKey: 'AIzaSyBeIQALIw7Ii_dl7ZVTwnvt5C2ZAgSfLu8'
+   })
   ],
   providers: [AuthService,
     AngularFireAuth],

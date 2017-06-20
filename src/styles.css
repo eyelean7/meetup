@@ -5,3 +5,6 @@
 body {
   background-color: #EAF2F2;
 }
+agm-map {
+  height: 300px;
+}
