@@ -25,7 +25,7 @@ export class MeetupDetailsComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.meetupId = urlParameters['id'];
     });
-    this.userId = '-Kn1WteIme57QdttCPiD';
+    this.userId = '-Kn5KWzw_8mGx4u1U-Hy';
 
     this.meetupService.getMeetupById(this.meetupId).subscribe(dataLastEmittedFromObserver => {
       this.meetupToDisplay = dataLastEmittedFromObserver;
@@ -40,9 +40,13 @@ export class MeetupDetailsComponent implements OnInit {
     let currentMeetup = this.meetupToDisplay;
     let currentMeetupKey = this.meetupService.getKey(currentMeetup);
     let currentUserKey = this.userService.getKey(currentUser);
-    currentUser.meetupsPerUser.push(currentMeetupKey);
     currentMeetup.usersPerMeetup.push(currentUserKey);
+    currentUser.meetupsPerUser.push(currentMeetupKey);
+    if (currentUser.meetupsPerUser[0] === 'filler') {
+      currentUser.meetupsPerUser.shift();
+    }
     this.meetupService.updateMeetup(currentMeetup);
+    this.userService.updateUser(currentUser);
   }
 
 }

@@ -29,7 +29,7 @@ export class UserService {
                                   password: localUpdatedUser.password,
                                   zipCode: localUpdatedUser.zipCode,
                                   dateTimeCreated: localUpdatedUser.dateTimeCreated,
-                                  meetups: localUpdatedUser.meetups});
+                                  meetupsPerUser: localUpdatedUser.meetupsPerUser});
   }
 
   deleteUser(localUserToDelete) {

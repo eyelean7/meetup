@@ -29,7 +29,7 @@ export class MeetupService {
                                   description: localUpdatedMeetup.description,
                                   time: localUpdatedMeetup.time,
                                   place: localUpdatedMeetup.place,
-                                  users: localUpdatedMeetup.users});
+                                  usersPerMeetup: localUpdatedMeetup.usersPerMeetup});
   }
 
   deleteMeetup(localMeetupToDelete) {
