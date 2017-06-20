@@ -19,11 +19,12 @@ export class AuthenticationComponent implements OnInit {
   ngOnInit() {
   }
 
-  firebaseLogin(){
-    $scope.authObj.$authWithOAuthPopup("google").then(function(authData) {
-    console.log("Logged in as:", authData.uid);
-  }).catch(function(error) {
-    console.error("Authentication failed:", error);
-  });
-
+  // firebaseLogin(){
+  //   $scope.authObj.$authWithOAuthPopup("google").then(function(authData) {
+  //   console.log("Logged in as:", authData.uid);
+  // }).catch(function(error) {
+  //   console.error("Authentication failed:", error);
+  // });
+  //
+  // }
 }

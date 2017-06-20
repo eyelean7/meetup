@@ -1,8 +1,8 @@
 export const masterFirebaseConfig = {
-  apiKey: 'AIzaSyDdp9wVWhLCCHwJ8w2e3p5Z4xAutG8L8GU',
-  authDomain: 'meetup-manager.firebaseapp.com',
-  databaseURL: 'https://meetup-manager.firebaseio.com',
-  projectId: 'meetup-manager',
-  storageBucket: '',
-  messagingSenderId: '666588059303'
+  apiKey: "AIzaSyCaFYoscVA7qh5ZBZdNKP6rXJ3AFTkgzZ4",
+   authDomain: "meetup-bf7cf.firebaseapp.com",
+   databaseURL: "https://meetup-bf7cf.firebaseio.com",
+   projectId: "meetup-bf7cf",
+   storageBucket: "meetup-bf7cf.appspot.com",
+   messagingSenderId: "489613352171"
 };

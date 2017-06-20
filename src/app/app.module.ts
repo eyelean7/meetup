@@ -11,6 +11,10 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MeetupDetailsComponent } from './meetup-details/meetup-details.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AuthService } from './providers/auth.service';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 
@@ -27,7 +31,9 @@ export const firebaseConfig = {
     NewMeetupComponent,
     SignUpComponent,
     MeetupDetailsComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    LoginPageComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,8 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [AuthService,
+    AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
