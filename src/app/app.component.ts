@@ -21,6 +21,5 @@ export class AppComponent {
   logout() {
     this.authService.logout();
     this.router.navigate(['']);
-    console.log('logged out')
   }
 }

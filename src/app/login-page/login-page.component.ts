@@ -22,18 +22,20 @@ export class LoginPageComponent implements OnInit {
   constructor(public authService: AuthService, private router: Router, public meetupService: MeetupService) { }
 
   ngOnInit() {
-    console.log(this.authService.userDisplayName);
     this.authService.user.subscribe(dataLastEmittedFromObserver => {
       this.currentUser = dataLastEmittedFromObserver;
       this.currentUserKey = this.currentUser.uid;
       this.meetupService.getMeetups().subscribe(dataLastEmittedFromObserver => {
         this.allMeetups = dataLastEmittedFromObserver;
         this.meetupsForUser = this.meetupService.getMeetupsForUser(this.currentUserKey, this.allMeetups);
-        console.log(this.currentUserKey);
       });
     })
 
 
+  }
+
+  goToDetailsPage(clickedMeetup) {
+    this.router.navigate(['meetups', clickedMeetup.$key]);
   }
 
 

@@ -43,8 +43,6 @@ export class MeetupService {
   }
 
   getMeetupsForUser(userKey, meetupArray) {
-    console.log(userKey);
-    console.log(meetupArray);
     var meetups = [];
     for (var meetup of meetupArray) {
       if (meetup.usersPerMeetup.includes(userKey)) {

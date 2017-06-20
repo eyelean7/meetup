@@ -20,7 +20,6 @@ export class NewMeetupComponent implements OnInit {
   ngOnInit() {
     this.authService.user.subscribe(dataLastEmittedFromObserver => {
       this.currentUser = dataLastEmittedFromObserver;
-      console.log(this.currentUser.uid);
     })
   }
 

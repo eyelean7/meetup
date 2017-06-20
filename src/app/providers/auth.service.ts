@@ -26,7 +26,6 @@ export class AuthService {
       this.uid = result.user.uid;
       this.loggedIn = true;
       this.makeUser();
-      console.log(this.userDisplayName);
     })
   }
   logout(){
@@ -56,8 +55,7 @@ export class AuthService {
 
 // firebase.auth().onAuthStateChanged(function(user) {
 // if (user) {
-//   console.log(userDisplayName);
-//   console.log(userEmail);
+
 //   // User is signed in.
 // } else {
 //   // No user is signed in.
