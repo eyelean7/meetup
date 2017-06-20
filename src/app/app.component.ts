@@ -9,6 +9,8 @@ import { AuthService } from './providers/auth.service'
 })
 export class AppComponent {
   appUser: string;
+  lat: number = 47.6062;
+  lng: number = 122.3321;
   constructor(public authService: AuthService, private router: Router) { }
   loginGoogle(){
     this.authService.loginWithGoogle();
