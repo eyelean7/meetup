@@ -4,7 +4,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { User } from '../user.model';
-import { CurrentUser } from '../globals';
 
 // import { AngularFire, AuthProviders, AuthMethods} from 'angularfire2'
 
@@ -13,7 +12,6 @@ export class AuthService {
   userDisplayName: string = null;
   userEmail:string;
   uid:string;
-  currentUser = new CurrentUser;
   user: Observable<firebase.User>;
   provider = new firebase.auth.GoogleAuthProvider();
   loggedIn:boolean = false;
@@ -30,8 +28,6 @@ export class AuthService {
       this.loggedIn = true;
       console.log(this.uid);
     })
-    this.currentUser.userId = this.uid;
-    // console.log(this.currentUser.userId);
   }
   logout(){
     this.afAuth.auth.signOut();
