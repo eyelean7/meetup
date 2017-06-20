@@ -25,5 +25,5 @@ export class AuthenticationComponent implements OnInit {
   }).catch(function(error) {
     console.error("Authentication failed:", error);
   });
-    }
+
 }

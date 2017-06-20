@@ -13,6 +13,7 @@ import { MeetupDetailsComponent } from './meetup-details/meetup-details.componen
 import { WelcomeComponent } from './welcome/welcome.component';
 
 
+
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
@@ -25,7 +26,7 @@ export const firebaseConfig = {
     AppComponent,
     NewMeetupComponent,
     SignUpComponent,
-    MeetupDetailsComponent
+    MeetupDetailsComponent,
     WelcomeComponent
   ],
   imports: [
