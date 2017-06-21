@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../providers/auth.service'
+import { AuthService } from '../providers/auth.service';
 import { Meetup } from '../meetup.model';
 import { MeetupService } from '../meetup.service';
 import { FirebaseListObservable } from 'angularfire2/database';
@@ -40,16 +40,4 @@ export class WelcomeComponent implements OnInit {
   goToDetailsPage(clickedMeetup) {
     this.router.navigate(['meetups', clickedMeetup.$key]);
   }
-
-
-  // loginGoogle(){
-  //   this.authService.loginWithGoogle()
-  //   // if (this.authService.userDisplayName != null){
-  //   // this.router.navigate(['home']);
-  // }
-
 }
-
-
-// .then((result) => {
-//   this.router.navigate(['']);

@@ -5,6 +5,7 @@ import { MeetupDetailsComponent } from './meetup-details/meetup-details.componen
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SearchComponent } from './search/search.component';
 import { AllMeetupsComponent } from './all-meetups/all-meetups.component';
+import { MeetupApiComponent } from './meetup-api/meetup-api.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
   {
     path: 'meetup/new',
     component: NewMeetupComponent
+  },
+  {
+    path: 'find',
+    component: MeetupApiComponent
   }
 ];
 

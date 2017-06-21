@@ -43,8 +43,8 @@ export class MeetupService {
   }
 
   getMeetupsForUser(userKey, meetupArray) {
-    var meetups = [];
-    for (var meetup of meetupArray) {
+    let meetups = [];
+    for (let meetup of meetupArray) {
       if (meetup.usersPerMeetup.includes(userKey)) {
         meetups.push(meetup);
       }

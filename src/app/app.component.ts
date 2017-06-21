@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from './providers/auth.service'
+import { AuthService } from './providers/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +12,10 @@ export class AppComponent {
   lat: number = 47.61;
    lng: number = -122.33;
   constructor(public authService: AuthService, private router: Router) { }
-  loginGoogle(){
+  loginGoogle() {
     this.authService.loginWithGoogle();
 
-    // if (this.authService.userDisplayName != null){
-    // this.router.navigate(['home']);
+
   }
   logout() {
     this.authService.logout();

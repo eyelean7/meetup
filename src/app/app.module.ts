@@ -15,6 +15,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { SearchComponent } from './search/search.component';
 import { AllMeetupsComponent } from './all-meetups/all-meetups.component';
 import { AgmCoreModule } from '@agm/core';
+import { MeetupApiComponent } from './meetup-api/meetup-api.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -30,7 +31,8 @@ export const firebaseConfig = {
     MeetupDetailsComponent,
     WelcomeComponent,
     SearchComponent,
-    AllMeetupsComponent
+    AllMeetupsComponent,
+    MeetupApiComponent
   ],
   imports: [
     BrowserModule,
