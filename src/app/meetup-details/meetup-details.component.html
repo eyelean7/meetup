@@ -4,4 +4,9 @@
   <h4>{{meetupToDisplay?.place}}</h4>
   <h4>{{meetupToDisplay?.time}}</h4>
 </div>
-<button class="btn waves-effect waves light" (click)="join(currentUser)">I'm Going</button>
+<button class="btn waves-effect waves light" (click)="join()">I'm Going</button>
+<button class="btn waves-effect waves light orange" (click)="startCarpool()">Start a carpool</button>
+<div *ngFor="let carpool of carpoolsForMeetup" class="card-panel">
+  <h3>Host: {{carpool.host}}</h3>
+  <h4>People in this carpool:</h4>
+  <p *ngFor="let person of carpool.usersPerCarpool">{{person}}</p>
