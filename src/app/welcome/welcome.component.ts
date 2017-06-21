@@ -42,4 +42,12 @@ export class WelcomeComponent implements OnInit {
   goToDetailsPage(clickedMeetup) {
     this.router.navigate(['meetups', clickedMeetup.$key]);
   }
+
+  unJoin(meetupToUnjoin) {
+    let currentUserKey = this.currentUser.uid;
+    let currentMeetup = meetupToUnjoin;
+    let index = currentMeetup.usersPerMeetup.indexOf(currentUserKey);
+    currentMeetup.usersPerMeetup.splice(index, 1);
+    this.meetupService.updateMeetup(currentMeetup);
+  }
 }

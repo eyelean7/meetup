@@ -1,8 +1,9 @@
 <div *ngIf="currentUserKey" class="container">
   <h1>Welcome, {{currentUserName}}</h1>
   <h2>Meetups you are attending:</h2>
-  <div *ngFor="let meetup of meetupsForUser">
-    <h4 class="card-panel" (click)="goToDetailsPage(meetup)">{{meetup.title}}</h4>
+  <div *ngFor="let meetup of meetupsForUser" class="card-panel">
+    <h4 (click)="goToDetailsPage(meetup)">{{meetup.title}}</h4>
+    <button (click)="unJoin(meetup)" class="btn red darken-1">UnJoin</button>
   </div>
 </div>
 <div *ngIf="currentUserKey === null" class="container">
