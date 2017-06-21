@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './providers/auth.service';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-root',
