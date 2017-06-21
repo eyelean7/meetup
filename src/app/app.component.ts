@@ -9,9 +9,15 @@ import { AuthService } from './providers/auth.service'
 })
 export class AppComponent {
   appUser;
+  loggedIn;
   lat: number = 47.6062;
   lng: number = 122.3321;
   constructor(public authService: AuthService, private router: Router) { }
+  ngOnInit () {
+    if ( this.authService.user) {
+      this.loggedIn = true;
+    }
+  }
   loginGoogle(){
     this.authService.loginWithGoogle();
     this.signInUser();
@@ -20,13 +26,16 @@ export class AppComponent {
   }
   logout() {
     this.authService.logout();
-    this.router.navigate(['']);
+    this.loggedIn = false;
+    location.reload();
   }
 
   signInUser() {
     this.authService.user.subscribe(dataLastEmittedFromObserver => {
       this.appUser = dataLastEmittedFromObserver;
-      console.log(this.appUser.displayName);
+      // location.reload();
+      this.loggedIn = true;
     });
+
   }
 }

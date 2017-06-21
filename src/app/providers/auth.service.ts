@@ -13,33 +13,23 @@ export class AuthService {
   uid:string;
   user: Observable<firebase.User>;
   provider = new firebase.auth.GoogleAuthProvider();
-  loggedIn:boolean = false;
   constructor(public afAuth: AngularFireAuth, private router: Router) {
     this.user = afAuth.authState;
   }
 
   loginWithGoogle(){
-    this.afAuth.auth.signInWithPopup(this.provider).then((result) => {
+    firebase.auth().signInWithPopup(this.provider).then((result) => {
       this.userName = result.user.displayName;
       this.userEmail = result.user.email;
       this.uid = result.user.uid;
-      this.loggedIn = true;
-      this.makeUser();
+      location.reload();
     });
   }
   logout(){
-    this.loggedIn = false;
     this.afAuth.auth.signOut();
   }
 
-
-  makeUser(){
-      this.router.navigate(['']);
-      console.log(this.userName);
-  }
-
   getUser(){
-    console.log(this.userName);
     return this.userName;
   }
 
