@@ -35,7 +35,9 @@ export class MeetupDetailsComponent implements OnInit {
   join() {
     let currentMeetup = this.meetupToDisplay;
     let currentUserKey = this.currentUser.uid;
-    currentMeetup.usersPerMeetup.push(currentUserKey);
+    if (!currentMeetup.usersPerMeetup.includes(currentUserKey)) {
+      currentMeetup.usersPerMeetup.push(currentUserKey);
+    }
     this.meetupService.updateMeetup(currentMeetup);
   }
 }

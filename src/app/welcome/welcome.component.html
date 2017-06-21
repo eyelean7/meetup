@@ -3,6 +3,7 @@
   <h2>Meetups you are attending:</h2>
   <div *ngFor="let meetup of meetupsForUser">
     <h4 class="card-panel" (click)="goToDetailsPage(meetup)">{{meetup.title}}</h4>
+    <button (click)="unJoin(meetup)">UnJoin</button>
   </div>
 </div>
 <div *ngIf="currentUserKey === null" class="container">
