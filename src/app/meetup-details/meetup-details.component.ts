@@ -33,6 +33,7 @@ export class MeetupDetailsComponent implements OnInit {
       this.currentUser = dataLastEmittedFromObserver;
     });
     this.carpoolService.getCarpools().subscribe(dataLastEmittedFromObserver => {
+      this.carpoolsForMeetup = [];
       let allCarpools = dataLastEmittedFromObserver;
       let title = this.meetupToDisplay.title;
       for (let carpool of allCarpools) {
@@ -40,7 +41,6 @@ export class MeetupDetailsComponent implements OnInit {
           this.carpoolsForMeetup.push(carpool);
         }
       }
-      console.log(this.carpoolsForMeetup);
     });
   }
 
@@ -60,5 +60,11 @@ export class MeetupDetailsComponent implements OnInit {
     newCarpool.usersPerCarpool.push(host);
     newCarpool.usersPerCarpool.shift();
     this.carpoolService.addCarpool(newCarpool);
+  }
+  joinCarpool(localCarpool) {
+    let currentCarpool = localCarpool;
+    let user = this.currentUser.displayName;
+    currentCarpool.usersPerCarpool.push(user);
+    this.carpoolService.updateCarpool(currentCarpool);
   }
 }

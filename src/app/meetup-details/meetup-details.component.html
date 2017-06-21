@@ -10,3 +10,5 @@
   <h3>Host: {{carpool.host}}</h3>
   <h4>People in this carpool:</h4>
   <p *ngFor="let person of carpool.usersPerCarpool">{{person}}</p>
+  <button class="btn" (click)="joinCarpool(carpool)">Join Carpool</button>
+</div>
