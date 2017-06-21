@@ -10,7 +10,7 @@ export class MeetupApiService {
 
 
 getMeetups(input) {
-    return this.http.get('https://api.meetup.com/2/events?sign=true&group_urlname=' + input +'&format=json&key=1d14496d4c252e17651f6d4e33c3564').map(
+    return this.http.get("https://api.meetup.com/find/events?photo-host=public&sig_id=166661482&sig=df78f9541a6e4ddd0122c2e83f1cbdf77f4e3a5f").map(
       (res) => res.json());
 
   }

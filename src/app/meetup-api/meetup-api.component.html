@@ -1,19 +1,22 @@
-<div id="cleverbot">
+<div id="meetup">
   <div class="row">
-    <div class="col-md-8">
-      <div *ngFor="let meetup of meetups">
-        <p class="response">{{meetup.output}}</p>
+     <div class="col s12 m7">
+      <div *ngFor="let meetup of meetups" class="card">
+        <p class="response">Meetups:{{meetup.name}}</p>
+        <p class="response"> {{formattedTime}}</p>
+        <p class="response"> {{meetup.yes_rsvp_count}}</p>
+        <p class="response"> {{meetup.status}}</p>
       </div>
     </div>
-    <div class="col-md-4 cleverbot">
-      <div class="row bot-group">
-        <div class="col-md-7 bot-field">
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-7">
           <div class="form-group">
             <input class="form-control" #meetup placeholder="Search Meetups!">
           </div>
         </div>
           <div class="col-md-5">
-            <button class="btn btn-primary"(click)="displayMeetup(meetup.value)">Search!</button>
+            <button class="btn btn-primary" (click)="displayMeetup(meetup.value)" (click)="convertTime(meetup.value)">Search!</button>
           </div>
       </div>
     </div>

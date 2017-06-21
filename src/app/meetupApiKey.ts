@@ -1,3 +1,3 @@
 export class MeetupApi {
-  meetupApi = '1d14496d4c252e17651f6d4e33c3564';
+  meetupApi: '403f2b792d333a18732f205d2479398';
 }

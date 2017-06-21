@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'search',
-    component: SearchComponent
+    component: MeetupApiComponent
   },
   {
     path: 'meetups',
