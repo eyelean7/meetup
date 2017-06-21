@@ -8,34 +8,29 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
-  userDisplayName: string;
+  userName;
   userEmail:string;
   uid:string;
   user: Observable<firebase.User>;
   provider = new firebase.auth.GoogleAuthProvider();
-  loggedIn:boolean = false;
   constructor(public afAuth: AngularFireAuth, private router: Router) {
     this.user = afAuth.authState;
   }
 
   loginWithGoogle(){
-    this.afAuth.auth.signInWithPopup(this.provider).then((result) => {
-      this.userDisplayName = result.user.displayName;
+    firebase.auth().signInWithPopup(this.provider).then((result) => {
+      this.userName = result.user.displayName;
       this.userEmail = result.user.email;
       this.uid = result.user.uid;
-      this.loggedIn = true;
-      this.makeUser();
-    })
+      location.reload();
+    });
   }
   logout(){
-    this.loggedIn = false;
     this.afAuth.auth.signOut();
-
   }
 
-
-  makeUser(){
-      this.router.navigate([''])
+  getUser(){
+    return this.userName;
   }
 
 
