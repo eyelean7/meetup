@@ -1,3 +1,11 @@
-<p>
-  welcome works!
-</p>
+<div *ngIf="currentUserKey" class="container">
+  <h1>{{this.currentUserName}}</h1>
+  <h2>Meetups you are attending:</h2>
+  <div *ngFor="let meetup of meetupsForUser">
+    <h4 class="card-panel" (click)="goToDetailsPage(meetup)">{{meetup.title}}</h4>
+  </div>
+</div>
+<div *ngIf="currentUserKey === null" class="container">
+  <h1>Welcome to Meetup Manager</h1>
+  <h6>You can browse all meetups. Login to join a meetup or add one of your own.</h6>
+</div>

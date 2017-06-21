@@ -1,19 +1,15 @@
-
-import { WelcomeComponent } from './welcome/welcome.component'
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NewMeetupComponent } from './new-meetup/new-meetup.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
 import { MeetupDetailsComponent } from './meetup-details/meetup-details.component';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { HomePageComponent } from './home-page/home-page.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 import { SearchComponent } from './search/search.component';
 import { AllMeetupsComponent } from './all-meetups/all-meetups.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: LoginPageComponent
+    component: WelcomeComponent
   },
   {
     path: 'meetups/:id',

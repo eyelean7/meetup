@@ -3,13 +3,12 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
-import { User } from '../user.model';
 
 // import { AngularFire, AuthProviders, AuthMethods} from 'angularfire2'
 
 @Injectable()
 export class AuthService {
-  userDisplayName: string = null;
+  userDisplayName: string;
   userEmail:string;
   uid:string;
   user: Observable<firebase.User>;

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Meetup } from '../meetup.model';
-import { User } from '../user.model';
 import { MeetupService } from '../meetup.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 import { AuthService } from '../providers/auth.service';

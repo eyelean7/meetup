@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MeetupService } from '../meetup.service';
 import { Meetup } from '../meetup.model';
-import { User } from '../user.model';
-import { UserService } from '../user.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 import { AuthService } from '../providers/auth.service';
 
@@ -10,12 +8,12 @@ import { AuthService } from '../providers/auth.service';
   selector: 'app-new-meetup',
   templateUrl: './new-meetup.component.html',
   styleUrls: ['./new-meetup.component.css'],
-  providers: [MeetupService, UserService, AuthService]
+  providers: [MeetupService, AuthService]
 })
 export class NewMeetupComponent implements OnInit {
   currentUser;
 
-  constructor(private meetupService: MeetupService, private userService: UserService, private authService: AuthService) { }
+  constructor(private meetupService: MeetupService, private authService: AuthService) { }
 
   ngOnInit() {
     this.authService.user.subscribe(dataLastEmittedFromObserver => {
