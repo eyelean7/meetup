@@ -2,9 +2,23 @@
 .nav-wrapper {
   background-color:#15A5BD;
 }
-body {
+body, html{
   background-color: #EAF2F2;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 agm-map {
   height: 300px;
 }
+
+#map {
+  height: 100%;
+}
+/*.parallax{
+  background-image: url("https://i.ytimg.com/vi/u3MpZFND4h8/maxresdefault.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}*/
