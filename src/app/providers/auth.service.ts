@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
-  userDisplayName: string;
+  userName;
   userEmail:string;
   uid:string;
   user: Observable<firebase.User>;
@@ -20,22 +20,27 @@ export class AuthService {
 
   loginWithGoogle(){
     this.afAuth.auth.signInWithPopup(this.provider).then((result) => {
-      this.userDisplayName = result.user.displayName;
+      this.userName = result.user.displayName;
       this.userEmail = result.user.email;
       this.uid = result.user.uid;
       this.loggedIn = true;
       this.makeUser();
-    })
+    });
   }
   logout(){
     this.loggedIn = false;
     this.afAuth.auth.signOut();
-
   }
 
 
   makeUser(){
-      this.router.navigate([''])
+      this.router.navigate(['']);
+      console.log(this.userName);
+  }
+
+  getUser(){
+    console.log(this.userName);
+    return this.userName;
   }
 
 
