@@ -3,6 +3,7 @@
   background-color:#15A5BD;
 }
 body, html{
+  background-image: url("app/resources/group.jpg");
   background-color: #EAF2F2;
   height: 100%;
   margin: 0;
