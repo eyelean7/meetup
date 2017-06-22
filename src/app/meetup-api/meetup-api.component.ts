@@ -41,7 +41,6 @@ export class MeetupApiComponent implements OnInit {
       (data) => this.meetups =(data)
     );
     setInterval(function() {
-      console.log(this.meetups);
     }, 1000);
 
 
