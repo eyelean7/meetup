@@ -1,6 +1,18 @@
 <agm-map [latitude]="lat" [longitude]="lng">
   <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
 </agm-map><div id="meetup">
+  <div class="col-md-4">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="form-group">
+          <input class="form-control" #meetup placeholder="Search Meetups!">
+        </div>
+      </div>
+      <div class="col-md-5">
+        <button class="btn btn-primary" (click)="displayMeetup(meetup.value)" (click)="convertTime(meetup.value)">Search!</button>
+      </div>
+    </div>
+  </div>
   <div class="row">
      <div class="col s12 m6">
        <div class="card  darken-1">
@@ -19,17 +31,78 @@
             </div>
           </div>
         </div>
-    <div class="col-md-4">
-      <div class="row">
-        <div class="col-md-7">
-          <div class="form-group">
-            <input class="form-control" #meetup placeholder="Search Meetups!">
+        <div class="row">
+           <div class="col s12 m6">
+             <div class="card  darken-1">
+                <div class="card-content black-text">
+                  <h3>Eventbrite meetups in the area:</h3>
+                  <img  id="data"src="src/app/resources/data.png" alt="data" />
+                  <div class="card-action">
+                    <a href="https://www.eventbrite.com/e/data-science-fundamentals-intro-to-python-seattle-0807-tickets-32672337842?aff=es2">Visit our website</a>
+                  </div>
+                </div>
+                <div class="card-content black-text">
+                  <img  id="data"src="src/app/resources/angel.png" alt="data" />
+                  <div class="card-action">
+                    <a href="https://www.eventbrite.com/e/data-science-fundamentals-intro-to-python-seattle-0807-tickets-32672337842?aff=es2">Visit our website</a>
+                  </div>
+                </div>
+                <div class="card-content black-text">
+                  <img  id="data"src="src/app/resources/revel.png" alt="data" />
+                  <div class="card-action">
+                    <a href="https://www.eventbrite.com/e/data-science-fundamentals-intro-to-python-seattle-0807-tickets-32672337842?aff=es2">Visit our website</a>
+                  </div>
+                </div>
+                <div class="card-content black-text">
+                  <img  id="data"src="src/app/resources/weird.png" alt="data" />
+                  <div class="card-action">
+                    <a href="https://www.eventbrite.com/e/data-science-fundamentals-intro-to-python-seattle-0807-tickets-32672337842?aff=es2">Visit our website</a>
+                  </div>
+                </div>
+                <div class="card-content black-text">
+                  <img  id="data"src="src/app/resources/lady.png" alt="data" />
+                  <div class="card-action">
+                    <a href="https://www.eventbrite.com/e/data-science-fundamentals-intro-to-python-seattle-0807-tickets-32672337842?aff=es2">Visit our website</a>
+                  </div>
+                </div>
+                <div class="card-content black-text">
+                  <img  id="data"src="src/app/resources/red.png" alt="data" />
+                  <div class="card-action">
+                    <a href="https://www.eventbrite.com/e/data-science-fundamentals-intro-to-python-seattle-0807-tickets-32672337842?aff=es2">Visit our website</a>
+                  </div>
+                </div>
+                <div class="card-content black-text">
+                  <img  id="data"src="src/app/resources/beige.png" alt="data" />
+                  <div class="card-action">
+                    <a href="https://www.eventbrite.com/e/data-science-fundamentals-intro-to-python-seattle-0807-tickets-32672337842?aff=es2">Visit our website</a>
+                  </div>
+                </div>
+                <div class="card-content black-text">
+                  <img  id="data"src="src/app/resources/silver.png" alt="data" />
+                  <div class="card-action">
+                    <a href="https://www.eventbrite.com/e/data-science-fundamentals-intro-to-python-seattle-0807-tickets-32672337842?aff=es2">Visit our website</a>
+                  </div>
+                </div>
+                <div class="card-content black-text">
+                  <img  id="data"src="src/app/resources/blue.png" alt="data" />
+                  <div class="card-action">
+                    <a href="https://www.eventbrite.com/e/data-science-fundamentals-intro-to-python-seattle-0807-tickets-32672337842?aff=es2">Visit our website</a>
+                  </div>
+                </div>
+                <div class="card-content black-text">
+                  <img  id="data"src="src/app/resources/lightblue.png" alt="data" />
+                  <div class="card-action">
+                    <a href="https://www.eventbrite.com/e/data-science-fundamentals-intro-to-python-seattle-0807-tickets-32672337842?aff=es2">Visit our website</a>
+                  </div>
+                </div>
+                <div class="card-content black-text">
+                  <img  id="data"src="src/app/resources/darkblue.png" alt="data" />
+                  <div class="card-action">
+                    <a href="https://www.eventbrite.com/e/data-science-fundamentals-intro-to-python-seattle-0807-tickets-32672337842?aff=es2">Visit our website</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-5">
-          <button class="btn btn-primary" (click)="displayMeetup(meetup.value)" (click)="convertTime(meetup.value)">Search!</button>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
