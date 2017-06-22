@@ -3,7 +3,9 @@
   <h4>{{meetupToDisplay?.description}}</h4>
   <h4>Location: {{meetupToDisplay?.place}}</h4>
   <h4>Time: {{meetupToDisplay?.time}}</h4>
-<button class="btn waves-effect waves light" (click)="join()">I'm Going</button>
+<button *ngIf="currentUserIsAttending === false" class="btn waves-effect waves light" (click)="join()">I'm Going</button>
+<h4 *ngIf="currentUserIsAttending" class="confirmed orange lighten-4">You have confirmed that you will be attending this meetup!</h4>
+<button *ngIf="currentUserIsAttending" class="btn red lighten-1" (click)="unJoin(meetupToDisplay)">Actually I'm Not Going</button>
 <button class="btn waves-effect waves light orange" (click)="startCarpool()">Start a carpool</button>
 
 

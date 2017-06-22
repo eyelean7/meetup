@@ -20,6 +20,7 @@ export class MeetupDetailsComponent implements OnInit {
   currentUser;
   carpoolsForMeetup = [];
   carpoolAmount;
+  currentUserIsAttending = false;
 
   constructor(private route: ActivatedRoute, private location: Location, private meetupService: MeetupService, private authService: AuthService, private carpoolService: CarpoolService) { }
 
@@ -29,9 +30,13 @@ export class MeetupDetailsComponent implements OnInit {
     });
     this.meetupService.getMeetupById(this.meetupId).subscribe(dataLastEmittedFromObserver => {
       this.meetupToDisplay = dataLastEmittedFromObserver;
-    });
-    this.authService.user.subscribe(dataLastEmittedFromObserver => {
-      this.currentUser = dataLastEmittedFromObserver;
+      this.authService.user.subscribe(dataLastEmittedFromObserver => {
+        this.currentUser = dataLastEmittedFromObserver;
+        if(this.meetupToDisplay.usersPerMeetup.includes(this.currentUser.uid)) {
+          this.currentUserIsAttending = true;
+        }
+        console.log(this.currentUserIsAttending);
+      });
     });
     this.carpoolService.getCarpools().subscribe(dataLastEmittedFromObserver => {
       this.carpoolsForMeetup = [];
@@ -55,13 +60,35 @@ export class MeetupDetailsComponent implements OnInit {
     this.meetupService.updateMeetup(currentMeetup);
   }
 
+  unJoin(meetupToUnjoin) {
+    if (meetupToUnjoin.usersPerMeetup.length>1){
+      let currentUserKey = this.currentUser.uid;
+      let currentMeetup = meetupToUnjoin;
+      let index = currentMeetup.usersPerMeetup.indexOf(currentUserKey);
+      currentMeetup.usersPerMeetup.splice(index, 1);
+      this.meetupService.updateMeetup(currentMeetup);
+      this.currentUserIsAttending = false;
+    }
+
+  }
+
   startCarpool() {
-    const currentMeetup = this.meetupToDisplay.title;
-    const host = this.currentUser.displayName;
-    const newCarpool = new Carpool (host, currentMeetup);
-    newCarpool.usersPerCarpool.push(host);
-    newCarpool.usersPerCarpool.shift();
-    this.carpoolService.addCarpool(newCarpool);
+    let hosts = [];
+    let currentId = this.currentUser.uid;
+    for (let carPool of this.carpoolsForMeetup) {
+      hosts.push(carPool.host)
+    }
+    if (!hosts.includes(this.currentUser.displayName)) {
+      if (this.meetupToDisplay.usersPerMeetup.includes(currentId)) {
+        const currentMeetup = this.meetupToDisplay.title;
+        const host = this.currentUser.displayName;
+        const newCarpool = new Carpool (host, currentMeetup);
+        newCarpool.usersPerCarpool.push(host);
+        newCarpool.usersPerCarpool.shift();
+        this.carpoolService.addCarpool(newCarpool);
+      }
+    }
+
   }
 
   joinCarpool(localCarpool) {
