@@ -61,6 +61,16 @@ lat: number = 47.61;
     let index = currentMeetup.usersPerMeetup.indexOf(currentUserKey);
     currentMeetup.usersPerMeetup.splice(index, 1);
     this.meetupService.updateMeetup(currentMeetup);
+    let carPools = this.currentUserCarpools;
+    console.log(this.currentUserCarpools);
+    for (let carPool of carPools) {
+      if (carPool.meetup === currentMeetup.title) {
+        this.unjoinCarpool(carPool);
+        if(carPool.host === this.currentUser.displayName) {
+          this.carpoolService.delete(carPool)
+        }
+      }
+    }
   }
 
   unjoinCarpool(carpoolToUnjoin) {
