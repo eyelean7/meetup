@@ -6,6 +6,9 @@
   <h2>Meetups you are attending:</h2>
   <div *ngFor="let meetup of meetupsForUser" class="card-panel">
     <h4 (click)="goToDetailsPage(meetup)">{{meetup.title}}</h4>
+    <div *ngFor="let carpool of currentUserCarpools">
+      <h5 *ngIf="carpool.meetup === meetup.title">You are in {{carpool.host}}'s carpool for this meetup</h5>
+    </div>
     <button (click)="unJoin(meetup)" class="btn red darken-1">UnJoin</button>
   </div>
 </div>

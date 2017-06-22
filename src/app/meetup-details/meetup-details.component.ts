@@ -19,6 +19,7 @@ export class MeetupDetailsComponent implements OnInit {
   meetupToDisplay;
   currentUser;
   carpoolsForMeetup = [];
+  carpoolAmount;
 
   constructor(private route: ActivatedRoute, private location: Location, private meetupService: MeetupService, private authService: AuthService, private carpoolService: CarpoolService) { }
 
@@ -41,6 +42,7 @@ export class MeetupDetailsComponent implements OnInit {
           this.carpoolsForMeetup.push(carpool);
         }
       }
+      this.carpoolAmount = this.carpoolsForMeetup.length;
     });
   }
 
