@@ -9,6 +9,8 @@ import { MeetupApi } from 'app/meetupApiKey';
   providers: [MeetupApiService, MeetupApi]
 })
 export class MeetupApiComponent implements OnInit {
+lat: number = 47.61;
+ lng: number = -122.33;
   formattedTime;
   meetups = [];
 

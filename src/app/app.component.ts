@@ -12,8 +12,7 @@ export class AppComponent {
 
   appUser;
   loggedIn;
-  lat: number = 47.61;
-   lng: number = -122.33;
+  
   constructor(public authService: AuthService, private router: Router) { }
 
     ngOnInit () {

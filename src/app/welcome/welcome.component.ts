@@ -14,6 +14,8 @@ import { AppComponent } from '../app.component'
   providers: [MeetupService, AuthService]
 })
 export class WelcomeComponent implements OnInit {
+lat: number = 47.61;
+ lng: number = -122.33;
   meetups: FirebaseListObservable<any[]>;
   currentUser;
   currentUserKey = null;

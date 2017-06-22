@@ -1,5 +1,8 @@
 <div *ngIf="currentUserKey" class="container">
-  <h1>Welcome, {{currentUserName}}</h1>
+  <h1>Welcome, {{currentUserName}}!</h1>
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
   <h2>Meetups you are attending:</h2>
   <div *ngFor="let meetup of meetupsForUser" class="card-panel">
     <h4 (click)="goToDetailsPage(meetup)">{{meetup.title}}</h4>
@@ -8,5 +11,8 @@
 </div>
 <div *ngIf="currentUserKey === null" class="container">
   <h1>Welcome to Meetup Manager</h1>
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
   <h4>You can browse all meetups. Login to join a meetup or carpool, or add one of your own.</h4>
 </div>
