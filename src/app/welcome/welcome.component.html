@@ -7,7 +7,7 @@
   <div *ngFor="let meetup of meetupsForUser" class="card-panel">
     <div class="row">
       <div class="col s6">
-        <h4 (click)="goToDetailsPage(meetup)">{{meetup.title}}</h4>
+        <h4 class="meetupTitle" (click)="goToDetailsPage(meetup)">{{meetup.title}}</h4>
         <button (click)="unJoin(meetup)" class="btn red lighten-2">UnJoin this Meetup</button>
       </div>
       <div class="col s6">

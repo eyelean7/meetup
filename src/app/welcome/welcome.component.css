@@ -15,3 +15,7 @@ h1,h2,h4 {
   background-color: rgba(21,165,189, 0.5);
   color: white;
 }
+
+.meetupTitle {
+  cursor: pointer;
+}

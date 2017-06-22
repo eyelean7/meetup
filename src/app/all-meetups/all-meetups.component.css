@@ -2,3 +2,8 @@ h1{
   padding: 10px;
   background: rgba(255, 255, 255, 0.5);
 }
+
+.meetupCard {
+  background: rgba(192, 192, 192, 0.5);
+  cursor: pointer;
+}
