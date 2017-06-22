@@ -11,19 +11,34 @@
       <div class="col-md-5">
         <button class="btn btn-primary" (click)="displayMeetup(meetup.value)" (click)="convertTime(meetup.value)">Search!</button>
       </div>
+      <div class="col-md-5">
+        <button class="btn btn-primary" (click)="getRandomInt()">Randomized Search!</button>
+      </div>
     </div>
   </div>
+  <!-- <div class="row">
+     <div class="col s12 m6">
+       <div class="card  darken-1">
+          <div class="card-content black-text">
+            <div class="card">
+              <span class="card-title" id="random"></span>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div> -->
   <div class="row">
      <div class="col s12 m6">
        <div class="card  darken-1">
           <div class="card-content black-text">
-            <div *ngFor="let meetup of meetups" class="card">
-              <span class="card-title">{{meetup.name}}</span>
+            <div *ngFor="let meetup of meetups; let i=index;" class="card">
+              <span class="card-title">{{i+1}}). {{meetup.name}}</span>
               <p class="response">  Location: {{meetup.group.localized_location}}</p>
               <p class="response"> <span *ngIf="meetup.venue">  Address: {{meetup.venue.address_1}}</span></p>
               <p class="response">  Date: {{meetup.time | date}}</p>
               <p class="response"> Headcount: {{meetup.yes_rsvp_count}}</p>
-              <p class="response">  Status: {{meetup.status}}</p>
+              <p class="response"> <span *ngIf="meetup.status"> Status: {{meetup.status}}</span></p>
+              <p class="response"> <span *ngIf="meetup.status" [innerHTML]= "meetup.description"> Status: {{ meetup.description}}</span></p>
               <div class="card-action">
                 <a href="{{meetup.link}}">Visit our website</a>
             </div>
