@@ -22,33 +22,16 @@ lat: number = 47.61;
 
   ngOnInit() {
   }
-  convertTime(meetups) {
-    // Convert milliseconds since since 00:00:00 UTC, Thursday, 1 January 1970 (the epoch in Unix speak)
-    var date = new Date();
+   getRandomInt(input) {
 
-    // now get individual properties from the date object to construct a new format
-
-    // hours part from the timestamp
-    var hours = date.getHours();
-
-    // minutes part from the timestamp
-    var minutes = date.getMinutes();
-
-    // seconds part from the timestamp
-    var seconds = date.getSeconds();
-
-    // display time in our new format
-    this.formattedTime = hours + ':' + minutes + ':' + seconds;
+    alert(Math.floor(Math.random()*123));
   }
+
   displayMeetup(input){
     this.meetups = [];
     this.meetupApiService.getMeetups(input).subscribe(
       (data) => this.meetups =(data)
     );
-
-    setInterval(function() {
-    console.log(this.meetups); }, 1000);
-
   }
 
 }
