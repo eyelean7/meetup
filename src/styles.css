@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 .nav-wrapper {
-  background-color:#15A5BD;
+  font-family: copperplate;
+  background: linear-gradient(275deg, #15A5BD, #15A5BD 60%, #FF4D4D);
 }
 body, html{
+  font-family: monaco;
   background-image: url("app/resources/group.jpg");
   background-color: #EAF2F2;
   height: 100%;
