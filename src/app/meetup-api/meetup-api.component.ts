@@ -8,6 +8,7 @@ import { MeetupApi } from 'app/meetupApiKey';
   styleUrls: ['./meetup-api.component.css'],
   providers: [MeetupApiService, MeetupApi]
 })
+
 export class MeetupApiComponent implements OnInit {
 lat: number = 47.61;
  lng: number = -122.33;
@@ -16,6 +17,8 @@ lat: number = 47.61;
 
 
   constructor(private meetupApiService: MeetupApiService) { }
+
+
 
   ngOnInit() {
   }
@@ -42,12 +45,10 @@ lat: number = 47.61;
     this.meetupApiService.getMeetups(input).subscribe(
       (data) => this.meetups =(data)
     );
-    setInterval(function() {
-    }, 1000);
 
+    setInterval(function() {
+    console.log(this.meetups); }, 1000);
 
   }
-
-
 
 }
