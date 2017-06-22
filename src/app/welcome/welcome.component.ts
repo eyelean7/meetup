@@ -62,4 +62,14 @@ lat: number = 47.61;
     currentMeetup.usersPerMeetup.splice(index, 1);
     this.meetupService.updateMeetup(currentMeetup);
   }
+
+  unjoinCarpool(carpoolToUnjoin) {
+    if (carpoolToUnjoin.host != this.currentUser.displayName) {
+      let currentUserKey = this.currentUser.uid;
+      let currentCarpool = carpoolToUnjoin;
+      let index = currentCarpool.usersPerCarpool.indexOf(currentUserKey);
+      currentCarpool.usersPerCarpool.splice(index, 1);
+      this.carpoolService.updateCarpool(currentCarpool);
+    }
+  }
 }

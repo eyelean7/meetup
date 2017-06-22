@@ -5,3 +5,13 @@
 h1,h2,h4 {
   padding: 10px;
 }
+
+.unjoinCarpool {
+  margin-left: 5px;
+}
+
+.card-panel {
+  margin-top: 5px;
+  background-color: rgba(21,165,189, 0.5);
+  color: white;
+}

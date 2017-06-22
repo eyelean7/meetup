@@ -30,4 +30,8 @@ export class CarpoolService {
                                    usersPerCarpool: localUpdatedCarpool.usersPerCarpool});
   }
 
+  delete(localCarpoolToDelete) {
+    let carpoolEntryInFirebase = this.getCarpoolById(localCarpoolToDelete.$key);
+    carpoolEntryInFirebase.remove();
+  }
 }

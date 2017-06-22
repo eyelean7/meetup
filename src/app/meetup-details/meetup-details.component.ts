@@ -63,10 +63,24 @@ export class MeetupDetailsComponent implements OnInit {
     newCarpool.usersPerCarpool.shift();
     this.carpoolService.addCarpool(newCarpool);
   }
+
   joinCarpool(localCarpool) {
     let currentCarpool = localCarpool;
     let user = this.currentUser.displayName;
-    currentCarpool.usersPerCarpool.push(user);
-    this.carpoolService.updateCarpool(currentCarpool);
+    let alreadyInCarpool = false;
+    for (let carpool of this.carpoolsForMeetup) {
+      if (carpool.usersPerCarpool.includes(user)) {
+        alreadyInCarpool = true;
+      }
+    }
+    if (currentCarpool.host != user && alreadyInCarpool === false) {
+      currentCarpool.usersPerCarpool.push(user);
+      this.carpoolService.updateCarpool(currentCarpool);
+    }
+  }
+
+  deleteCarpool(localCarpool) {
+    let currentCarpool = localCarpool;
+    this.carpoolService.delete(localCarpool);
   }
 }

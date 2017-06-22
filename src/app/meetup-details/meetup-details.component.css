@@ -1,0 +1,13 @@
+.meetInfo {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+}
+.carpools{
+  padding: 10px;
+  background: rgba(21,165,189, 0.5);
+  color: white;
+}
+.card-panel {
+  background: rgba(21,165,189, 0.5);
+  color: white;
+}

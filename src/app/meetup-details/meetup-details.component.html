@@ -1,15 +1,21 @@
-<div>
-  <h3>{{meetupToDisplay?.title}}</h3>
+<div class="meetInfo">
+  <h1>{{meetupToDisplay?.title}}</h1>
   <h4>{{meetupToDisplay?.description}}</h4>
-  <h4>{{meetupToDisplay?.place}}</h4>
-  <h4>{{meetupToDisplay?.time}}</h4>
-</div>
+  <h4>Location: {{meetupToDisplay?.place}}</h4>
+  <h4>Time: {{meetupToDisplay?.time}}</h4>
 <button class="btn waves-effect waves light" (click)="join()">I'm Going</button>
 <button class="btn waves-effect waves light orange" (click)="startCarpool()">Start a carpool</button>
-<h3>There are {{carpoolAmount}} carpools for this meetup</h3>
+
+
+<h3 class="carpools card-panel" *ngIf="carpoolAmount === 1">There is 1 carpool for this meetup:</h3>
+<h3 class="carpools card-panel" *ngIf="carpoolAmount > 1">There are {{carpoolAmount}} carpools for this meetup:</h3>
+
 <div *ngFor="let carpool of carpoolsForMeetup" class="card-panel">
   <h3>Host: {{carpool.host}}</h3>
   <h4>People in this carpool:</h4>
   <p *ngFor="let person of carpool.usersPerCarpool">{{person}}</p>
   <button class="btn" (click)="joinCarpool(carpool)">Join Carpool</button>
+  <h5 *ngIf="carpool.host === currentUser.displayName">You are the host of this Carpool</h5>
+  <button *ngIf="carpool.host === currentUser.displayName" class="btn red lighten-2" (click)="deleteCarpool(carpool)">Delete this Carpool</button>
+</div>
 </div>
