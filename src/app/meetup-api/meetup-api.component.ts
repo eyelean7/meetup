@@ -43,7 +43,6 @@ lat: number = 47.61;
       (data) => this.meetups =(data)
     );
     setInterval(function() {
-      console.log(this.meetups);
     }, 1000);
 
 
