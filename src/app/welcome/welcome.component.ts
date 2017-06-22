@@ -37,7 +37,7 @@ lat: number = 47.61;
       console.log(this.currentUserName);
       this.meetupService.getMeetups().subscribe(dataLastEmittedFromObserver => {
         this.allMeetups = dataLastEmittedFromObserver;
-        this.meetupsForUser = this.meetupService.getMeetupsForUser(this.currentUserKey, this.allMeetups);
+         this.meetupsForUser = this.meetupService.getMeetupsForUser(this.currentUserKey, this.allMeetups);
       });
       this.carpoolService.getCarpools().subscribe(dataLastEmittedFromObserver => {
         this.currentUserCarpools = [];
